@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Habit Tracker</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <main class="container">
+      <header class="header">
+        <h1>Habit Tracker</h1>
+        <p class="sub">Add habits, mark them done, and build streaks.</p>
+      </header>
+
+      <section class="panel">
+        <form id="habitForm" class="form" autocomplete="off">
+          <label class="label" for="habitName">New habit</label>
+          <div class="row">
+            <input
+              id="habitName"
+              class="input"
+              type="text"
+              placeholder="e.g., Walk 10 minutes"
+              maxlength="40"
+            />
+            <button class="btn primary" type="submit">Add</button>
+          </div>
+          <p id="message" class="message" aria-live="polite"></p>
+        </form>
+
+        <div class="toolbar">
+          <div class="filters" role="tablist" aria-label="Habit filters">
+            <button class="chip active" data-filter="active" type="button">Active</button>
+            <button class="chip" data-filter="all" type="button">All</button>
+            <button class="chip" data-filter="archived" type="button">Archived</button>
+          </div>
+
+          <button id="clearDataBtn" class="btn danger" type="button" title="Deletes all habits">
+            Clear All
+          </button>
+        </div>
+      </section>
+
+      <section>
+        <h2 class="sectionTitle">Your habits</h2>
+        <div id="habitList" class="grid" aria-live="polite"></div>
+        <p id="emptyState" class="empty">No habits yet. Add one above.</p>
+      </section>
+
+      <footer class="footer">
+        <small>Data is stored locally in your browser (localStorage).</small>
+      </footer>
+    </main>
+
+    <script src="app.js" ></script>
+</body>
+</html>
